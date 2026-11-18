@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Global Suppliers | Rashi Ratna, Muga & Moti Mala Wholeale and Retail (Est. 2062)</title>
+    
+    <!-- External Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Setup -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        luxury: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: { light: '#F5E3B5', DEFAULT: '#D4AF37', dark: '#AA820A' },
+                        emeraldBg: '#041712',
+                        darkBg: '#090A0C'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased bg-darkBg text-gray-100 selection:bg-gold selection:text-black">
+
+    <!-- Ambient Glowing Background Elements -->
+    <div class="glow-orb top-[-100px] left-[-100px]"></div>
+    <div class="glow-orb top-[50%] right-[-100px]"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass py-3 px-6 md:px-12 flex justify-between items-center border-b border-gold/20">
+        <a href="#" class="flex items-center gap-3">
+            <!-- ========================================================= -->
+            <!-- LOGO PLACEMENT 1: Top-Left Header Brand Anchor -->
+            <!-- UI/UX Note: Immediate visual brand identification on load -->
+            <!-- ========================================================= -->
+            <img src="logo global suppliers.jpeg" alt="Global Suppliers Logo" class="h-10 w-auto object-contain rounded-sm border border-gold/30">
+            <div>
+                <span class="font-luxury text-lg md:text-xl font-bold tracking-[0.15em] text-white block">GLOBAL <span class="text-gold">SUPPLIERS</span></span>
+                <span class="text-[9px] text-gold/80 tracking-widest block font-sans">ESTD. 2062 BS | POKHARA</span>
+            </div>
+        </a>
+        
+        <div class="hidden md:flex space-x-8 font-medium text-xs tracking-widest text-gray-300 uppercase">
+            <a href="#" class="hover:text-gold transition-colors duration-300">Home</a>
+            <a href="#shop" class="hover:text-gold transition-colors duration-300">Shop</a>
+            <a href="#heritage" class="hover:text-gold transition-colors duration-300">Our Heritage</a>
+            <a href="#manager" class="hover:text-gold transition-colors duration-300">Management</a>
+            <a href="#business-card" class="hover:text-gold transition-colors duration-300">Contact & Card</a>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+            <button class="hover:text-gold transition-colors relative p-2" onclick="toggleCartModal(true)" aria-label="View Cart">
+                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                <span id="cart-count" class="absolute top-0 right-0 bg-gold text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 px-6 text-center z-10">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-semibold tracking-widest uppercase mb-2">
+                <i class="fa-solid fa-shield-halved"></i> Trusted Wholeale and Retail Supplier Since 2062 BS
+            </div>
+            
+            <!-- LOGO PLACEMENT 2: Center Hero Watermark / Logo Emblem -->
+            <div class="flex justify-center mb-4">
+                <img src="logo global suppliers.jpeg" alt="Global Suppliers Emblem" class="w-24 h-24 object-contain rounded-full border-2 border-gold/40 shadow-lg shadow-gold/10">
+            </div>
+
+            <h1 class="font-luxury text-3xl md:text-6xl font-bold leading-tight gold-text-gradient tracking-wide">
+               <center>Global Suppliers</center> <br>
+            </h1>
+            <h2 class="font-luxury text-2xl md:text-4xl font-bold leading-tight gold-text-gradient tracking-wide">
+                राशी रत्न, मुगा माला, मोती माला, जेट माला <br>
+                <span class="text-white text-2xl md:text-4xl">होलसेल मूल्यमा पाइन्छ।</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto font-light text-sm md:text-base leading-relaxed">
+                Directly sourced authentic astrological gemstones, crystal energy bracelets, and sacred malas from Pokhara-1, Mohoriya Tole & Pokhara-4, Chipledhunga.
+            </p>
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <a href="#shop" class="px-8 py-4 border border-gold bg-gold/10 text-gold font-semibold tracking-widest uppercase text-xs rounded-sm hover:bg-gold hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Browse Wholeale and Retail Inventory
+                </a>
+                <a href="#business-card" class="px-8 py-4 border border-zinc-700 bg-zinc-900/60 text-white font-semibold tracking-widest uppercase text-xs rounded-sm hover:border-gold transition-all duration-300">
+                    View Business Card
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Commerce Inventory Showcase -->
+    <section id="shop" class="py-20 px-6 md:px-12 max-w-7xl mx-auto z-10 relative">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+            <div>
+                <h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-1">Authentic Collections</h5>
+                <h2 class="font-luxury text-3xl md:text-4xl font-bold tracking-wide">Wholeale and Retail Storefront</h2>
+            </div>
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2 text-xs uppercase tracking-wider">
+                <button onclick="filterStorefront('All')" class="category-btn active px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 hover:border-gold transition-all">All</button>
+                <button onclick="filterStorefront('Crystal Bracelets')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 hover:border-gold transition-all">Bracelets</button>
+                <button onclick="filterStorefront('Rashi Ratna')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 hover:border-gold transition-all">Rashi Ratna</button>
+                <button onclick="filterStorefront('Mala Collections')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 hover:border-gold transition-all">Muga / Moti / Zet Mala</button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Heritage & Old/New Shop Gallery Section -->
+    <section id="heritage" class="py-20 px-6 md:px-12 bg-zinc-950/60 border-y border-zinc-900 z-10 relative">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Our Journey & Trust</h5>
+                <h2 class="font-luxury text-3xl md:text-4xl font-bold text-white">Serving You Since 2062 BS</h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto font-light leading-relaxed">
+                    With over two decades of experience, Global Suppliers continues to be Pokhara's leading trusted gemstone boutique and spiritual hardware Wholeale and Retail supplier.
+                </p>
+            </div>
+
+            <!-- Shop Visuals Showcase (Original Photo & New Store Video) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Old Shop Photo Replacement -->
+                <div class="glass p-4 rounded-lg border border-zinc-800 text-center space-y-4">
+                    <div class="relative aspect-video rounded-md overflow-hidden bg-zinc-900 flex items-center justify-center border border-zinc-800 group">
+                        <!-- Replaced placeholder with your uploaded old shop photo -->
+                        <img src="old shop phjot.jpeg" alt="Original Store Front in Mohoriya Tole" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-black/80 text-gold text-[10px] font-bold px-3 py-1 rounded border border-gold/30">ESTD 2062 BS</span>
+                    </div>
+                    <div>
+                        <h3 class="font-luxury text-lg text-white">Our Original Establishment</h3>
+                        <p class="text-xs text-zinc-400">Where our legacy of gemstone purity and customer trust first began at Mohoriya Tole, Pokhara-1.</p>
+                    </div>
+                </div>
+
+                <!-- New Shop Video Front Replacement -->
+                <div class="glass p-4 rounded-lg border border-gold/30 text-center space-y-4">
+                    <div class="relative aspect-video rounded-md overflow-hidden bg-zinc-900 flex items-center justify-center border border-zinc-800 group">
+                        <!-- Replaced placeholder with your uploaded new shop storefront video -->
+                        <video controls class="w-full h-full object-cover">
+                            <source src="new shop vdo.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                        <span class="absolute top-3 left-3 bg-gold text-black text-[10px] font-bold px-3 py-1 rounded">CURRENT STOREFRONT TOUR</span>
+                    </div>
+                    <div>
+                        <h3 class="font-luxury text-lg text-white">Modern Showroom</h3>
+                        <p class="text-xs text-zinc-400">Upgraded, modern store front featuring expanded gemstone and pearl mala collections.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Shop Video Tour Showcase -->
+            <div class="pt-8 border-t border-zinc-800">
+                <div class="text-center mb-8">
+                    <h3 class="font-luxury text-2xl text-gold">Store Quick Tour & Collection Previews</h3>
+                    <p class="text-xs text-zinc-400 mt-1">Explore our vast inventory of genuine pearls, crystal beads, and gemstone malas.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="glass p-2 rounded-lg border border-zinc-800">
+                        <video controls class="w-full aspect-[9/16] object-cover rounded">
+                            <source src="WhatsApp Video 2026-08-26 at 9.29.05 AM.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-[11px] text-zinc-300 text-center mt-2 font-semibold">Crystal & Gem Malas</p>
+                    </div>
+                    <div class="glass p-2 rounded-lg border border-zinc-800">
+                        <video controls class="w-full aspect-[9/16] object-cover rounded">
+                            <source src="WhatsApp Video 2026-08-26 at 9.29.07 AM.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-[11px] text-zinc-300 text-center mt-2 font-semibold">Beaded Mala Display</p>
+                    </div>
+                    <div class="glass p-2 rounded-lg border border-zinc-800">
+                        <video controls class="w-full aspect-[9/16] object-cover rounded">
+                            <source src="WhatsApp Video 2026-08-26 at 9.29.10 AM.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-[11px] text-zinc-300 text-center mt-2 font-semibold">Freshwater Pearl Strings</p>
+                    </div>
+                    <div class="glass p-2 rounded-lg border border-zinc-800">
+                        <video controls class="w-full aspect-[9/16] object-cover rounded">
+                            <source src="WhatsApp Video 2026-08-26 at 9.29.13 AM.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-[11px] text-zinc-300 text-center mt-2 font-semibold">Layered Pearl Necklaces</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- MANAGEMENT SECTION -->
+    <!-- UI/UX Note: Establishes leadership identity, transparency, and personal trust -->
+    <!-- ========================================================= -->
+    <section id="manager" class="py-20 px-6 md:px-12 max-w-5xl mx-auto z-10 relative">
+        <div class="text-center mb-10">
+            <h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-2">Store Leadership</h5>
+            <h2 class="font-luxury text-3xl md:text-4xl font-bold">Management & Operations</h2>
+        </div>
+        
+        <div class="glass p-8 rounded-xl border border-gold/30 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-gold/50 flex-shrink-0 bg-zinc-900 flex items-center justify-center">
+                <!-- Replace with manager headshot image if available -->
+                <i class="fa-solid fa-user-tie text-5xl text-gold/60"></i>
+            </div>
+            <div class="text-center md:text-left space-y-3">
+                <span class="text-xs text-gold uppercase tracking-widest font-semibold px-3 py-1 rounded bg-gold/10 border border-gold/20">General Manager</span>
+                <h3 class="font-luxury text-2xl font-bold text-white">Ayush Neupane</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed max-w-xl">
+                    Managing client inquiries, Wholeale and Retail gemstone supply chains, and customer relationship operations at Global Suppliers. Dedicated to providing certified quality gemstones and spiritual hardware across Nepal.
+                </p>
+                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs font-mono text-gold">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-envelope"></i> Contact: Store Operations</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-shield-check"></i> Quality Verified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Business Card Section -->
+    <section id="business-card" class="py-20 px-6 md:px-12 max-w-5xl mx-auto z-10 relative">
+        <div class="text-center mb-10">
+            <h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-2">Official Credentials</h5>
+            <h2 class="font-luxury text-3xl md:text-4xl font-bold">Business Card & Direct Contact</h2>
+        </div>
+
+        <!-- Digital Card Replica -->
+        <div class="glass p-6 md:p-8 rounded-xl border border-gold/40 shadow-2xl relative overflow-hidden bg-gradient-to-br from-emeraldBg via-zinc-950 to-darkBg">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b border-zinc-800">
+                <div class="text-center md:text-left">
+                    <span class="text-xs text-gold uppercase tracking-widest font-semibold">Proprietor</span>
+                    <h3 class="font-luxury text-xl md:text-2xl font-bold text-white">Pro. Ganga Pd. Neupane</h3>
+                    <p class="text-xs text-zinc-400">Global Suppliers (ग्लोबल सप्लायर्स)</p>
+                    <p class="text-[11px] text-gold/80 mt-1">General Manager: Ayush Neupane</p>
+                </div>
+                <!-- Contact Numbers -->
+                <div class="flex flex-col items-center md:items-end space-y-1 text-xs font-mono text-gold">
+                    <a href="tel:9856033167" class="hover:underline flex items-center gap-2"><i class="fa-solid fa-phone text-xs"></i> 9856033167</a>
+                    <a href="tel:9867359638" class="hover:underline flex items-center gap-2"><i class="fa-solid fa-mobile-screen text-xs"></i> 9867359638</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-center md:text-left text-xs text-zinc-300">
+                <div>
+                    <h4 class="text-gold font-semibold uppercase mb-1"><i class="fa-solid fa-location-dot mr-1"></i> Store Location</h4>
+                    <p>Pokhara-1, Mohoriya Tole &<br>Pokhara-4, Chipledhunga, Nepal</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-semibold uppercase mb-1"><i class="fa-solid fa-gem mr-1"></i> Specialization</h4>
+                    <p>राशी रत्न, मुगा माला, मोती माला, जेट माला Wholeale and Retail</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-semibold uppercase mb-1"><i class="fa-solid fa-clock-rotate-left mr-1"></i> Trust Experience</h4>
+                    <p>Established 2062 BS (Over 20+ Years Quality Guarantee)</p>
+                </div>
+            </div>
+
+            <!-- Embedded Scannable Business Card Photo -->
+            <div class="mt-8 pt-6 border-t border-zinc-800 text-center">
+                <p class="text-[11px] text-zinc-400 mb-4">Official Business Card Image</p>
+                <div class="inline-block p-2 bg-zinc-900 rounded-lg border border-gold/30">
+                    <img src="global crop.JPG" alt="Global Suppliers Business Signboard and Card Info" class="max-w-full h-auto rounded-md max-h-80 mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 md:px-12 border-t border-zinc-900 text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <!-- LOGO PLACEMENT 3: Footer Brand Emblem -->
+            <img src="logo global suppliers.jpeg" alt="Global Suppliers Logo" class="h-8 w-auto object-contain rounded-sm">
+            <p>&copy; 2026 Global Suppliers (Est. 2062 BS). Pokhara, Nepal. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6 text-base">
+            <a href="https://www.tiktok.com/@globalgemsandjewellery" target="_blank" rel="noopener noreferrer" class="hover:text-gold"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/global__suppliers" target="_blank" rel="noopener noreferrer" class="hover:text-gold"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/9779819169972" target="_blank" rel="noopener noreferrer" class="hover:text-gold"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md glass z-50 translate-x-full hidden flex flex-col p-6 shadow-2xl transition-transform duration-300">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b border-zinc-800">
+            <h3 class="font-luxury text-base tracking-widest text-white uppercase">Your Shopping Bag</h3>
+            <button onclick="toggleCartModal(false)" class="text-gray-400 hover:text-gold text-xl" aria-label="Close Bag"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cart-items" class="flex-grow overflow-y-auto space-y-4 dynamic-scroller"></div>
+        <div class="pt-4 border-t border-zinc-800 space-y-4">
+            <div class="flex justify-between items-center text-sm font-semibold text-white">
+                <span>Subtotal:</span>
+                <span id="cart-total" class="text-gold text-base">NPR 0</span>
+            </div>
+            <button onclick="dispatchCartCheckout()" class="w-full py-3 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-gold-dark transition-all duration-300">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Send Order & Image Links via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Core App Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Global Suppliers Pokhara — Wholeale and Retail rashi ratna, muga mala, moti mala, gemstone bracelets, panchadhatu jewellery and jade chura.">
+  <title>Global Suppliers | Pokhara Wholeale and Retail Gemstones & Jewellery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmasklqkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config={theme:{extend:{fontFamily:{luxury:['Cinzel','serif'],display:['Playfair Display','Cinzel','serif'],sans:['Inter','sans-serif']},colors:{gold:{light:'#F5E3B5',DEFAULT:'#D4AF37',dark:'#AA820A'},emeraldBg:'#041712',darkBg:'#090A0C'}}}};
+  </script>
+</head>
+<body class="antialiased bg-darkBg text-gray-100 selection:bg-gold selection:text-black intro-active">
+
+  <!-- ==========================================================
+       LOGO INTRO / SPLASH — plays once per browser session
+       (sessionStorage flag), then unmounts to reveal the site.
+       ========================================================== -->
+  <div id="logo-intro" aria-hidden="true">
+    <div class="intro-glow"></div>
+    <div class="intro-medallion">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle class="medallion-path" cx="100" cy="100" r="92"></circle>
+        <circle class="medallion-path-inner" cx="100" cy="100" r="76"></circle>
+      </svg>
+      <img src="photos/logo-global-suppliers-transparent.png" alt="" class="intro-mark">
+      <span class="intro-sparkle" style="width:5px;height:5px;top:18%;left:70%;animation-delay:.2s"></span>
+      <span class="intro-sparkle" style="width:4px;height:4px;top:75%;left:20%;animation-delay:.9s"></span>
+      <span class="intro-sparkle" style="width:6px;height:6px;top:65%;left:82%;animation-delay:1.4s"></span>
+    </div>
+    <div class="intro-word">GLOBAL <span>SUPPLIERS</span></div>
+    <div class="intro-tag">POKHARA · ESTD. 2062 BS</div>
+  </div>
+
+  <div class="ambient-particles" aria-hidden="true">
+    <span style="width:220px;height:220px;top:8%;left:5%;animation-duration:13s"></span>
+    <span style="width:160px;height:160px;top:55%;left:85%;animation-duration:10s;animation-delay:1.5s"></span>
+    <span style="width:190px;height:190px;top:80%;left:15%;animation-duration:14s;animation-delay:3s"></span>
+  </div>
+
+  <div class="glow-orb top-[-100px] left-[-100px]"></div>
+  <div class="glow-orb top-[50%] right-[-100px]"></div>
+
+  <!-- ==========================================================
+       EDITABLE BRAND AREA: replace only the image path if needed.
+       The overall navigation layout is intentionally preserved.
+       ========================================================== -->
+  <nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 py-3 px-5 md:px-12 flex justify-between items-center border-b">
+    <a href="#" class="flex items-center gap-3 nav-logo min-w-0">
+      <img src="photos/logo-global-suppliers.jpeg" alt="Global Suppliers logo" class="h-10 md:h-12 w-auto object-contain rounded-sm border border-gold/30">
+      <div class="min-w-0">
+        <span class="font-luxury text-sm md:text-xl font-bold tracking-[0.15em] text-white block truncate">GLOBAL <span class="text-gold">SUPPLIERS</span></span>
+        <span class="text-[8px] md:text-[9px] text-gold/80 tracking-widest block">ESTD. 2062 BS | POKHARA</span>
+      </div>
+    </a>
+    <div class="hidden lg:flex space-x-7 font-medium text-[10px] tracking-widest text-gray-300 uppercase">
+      <a href="#shop" class="nav-underline hover:text-gold transition-colors">Shop</a>
+      <a href="#bracelets" class="nav-underline hover:text-gold transition-colors">Bracelets</a>
+      <a href="#pearls" class="nav-underline hover:text-gold transition-colors">Pearls</a>
+      <a href="#rashi" class="nav-underline hover:text-gold transition-colors">Rashi</a>
+      <a href="#heritage" class="nav-underline hover:text-gold transition-colors">Our Journey</a>
+      <a href="#manager" class="nav-underline hover:text-gold transition-colors">Management</a>
+    </div>
+    <button class="hover:text-gold transition-colors relative p-2" onclick="toggleCartModal(true)" aria-label="View cart">
+      <i class="fa-solid fa-bag-shopping text-lg"></i>
+      <span id="cart-count" class="absolute top-0 right-0 bg-gold text-black font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+    </button>
+  </nav>
+
+  <main>
+    <!-- ==========================================================
+         HERO CAROUSEL: auto-rotating slides, crossfade background,
+         Ken Burns zoom, staggered text-in, gold dot indicators.
+         EDITABLE: swap data-bg paths / copy per slide below.
+         ========================================================== -->
+    <section class="hero-carousel z-10" id="hero-carousel">
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1611591475824-28784869c3a3?auto=format&fit=crop&w=1920&q=80')"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-carousel-content">
+          <div class="hero-eyebrow text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-4 flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> Trusted Wholeale and Retail Supplier Since 2062 BS</div>
+          <h1 class="hero-heading font-display text-4xl md:text-6xl font-bold leading-tight gold-text-gradient tracking-wide">Timeless Gems,<br>Trusted Since 2062 BS</h1>
+          <p class="hero-subtext text-gray-300 max-w-lg font-light text-sm md:text-base leading-relaxed mt-5">राशी रत्न, मुगा माला, मोती माला र जेट माला — Wholeale and Retail gemstone and traditional jewellery from Pokhara.</p>
+          <div class="hero-cta-row pt-7 flex flex-wrap gap-4">
+            <a href="#shop" class="btn-gold">Browse Inventory</a>
+            <a href="#business-card" class="px-8 py-4 border border-zinc-600 bg-black/30 text-white font-semibold tracking-widest uppercase text-xs rounded-sm hover:border-gold transition-all">View Business Card</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1920&q=80')"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-carousel-content">
+          <div class="hero-eyebrow text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-4">Rashi Ratna &amp; Bridal Mala</div>
+          <h1 class="hero-heading font-display text-4xl md:text-6xl font-bold leading-tight gold-text-gradient tracking-wide">Adorned In<br>Tradition</h1>
+          <p class="hero-subtext text-gray-300 max-w-lg font-light text-sm md:text-base leading-relaxed mt-5">Panchadhatu, jade chura and layered malas, hand-selected for Wholeale and Retail buyers across Nepal.</p>
+          <div class="hero-cta-row pt-7 flex flex-wrap gap-4">
+            <a href="#rashi" class="btn-gold">Explore Rashi Selector</a>
+            <a href="#heritage" class="px-8 py-4 border border-zinc-600 bg-black/30 text-white font-semibold tracking-widest uppercase text-xs rounded-sm hover:border-gold transition-all">Our Journey</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-indicators" id="hero-indicators"></div>
+    </section>
+
+    <section class="relative px-6 py-12 z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+        <div class="glass p-4 rounded-xl border border-zinc-800 text-center"><strong class="block text-gold text-lg">2062 BS</strong><span class="text-[10px] text-zinc-400 uppercase tracking-widest">Established</span></div>
+        <div class="glass p-4 rounded-xl border border-zinc-800 text-center"><strong class="block text-gold text-lg">Pokhara</strong><span class="text-[10px] text-zinc-400 uppercase tracking-widest">Nepal</span></div>
+        <div class="glass p-4 rounded-xl border border-zinc-800 text-center"><strong class="block text-gold text-lg">Wholeale and Retail</strong><span class="text-[10px] text-zinc-400 uppercase tracking-widest">Pricing</span></div>
+        <div class="glass p-4 rounded-xl border border-zinc-800 text-center"><strong class="block text-gold text-lg">Direct</strong><span class="text-[10px] text-zinc-400 uppercase tracking-widest">WhatsApp Enquiry</span></div>
+      </div>
+    </section>
+    <hr class="hairline max-w-5xl mx-auto">
+
+    <!-- ==========================================================
+         SHOP: original product-grid concept retained, expanded with
+         professional filters and searchable inventory.
+         ========================================================== -->
+    <section id="shop" class="py-20 px-6 md:px-12 max-w-7xl mx-auto z-10 relative">
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 gap-5">
+        <div>
+          <h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-1">Authentic Collections</h5>
+          <h2 class="font-luxury text-3xl md:text-4xl font-bold tracking-wide">Wholeale and Retail Storefront</h2>
+          <p id="product-count" class="text-[10px] text-zinc-500 mt-2 uppercase tracking-widest">0 items shown</p>
+        </div>
+        <div class="w-full lg:w-80"><label class="sr-only" for="product-search">Search products</label><input id="product-search" class="search-box" placeholder="Search pearl, rashi, mala, ring…"></div>
+      </div>
+      <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider mb-8">
+        <button data-category="All" onclick="filterStorefront('All')" class="category-btn active px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">All</button>
+        <button data-category="Bracelets" onclick="filterStorefront('Bracelets')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Bracelets</button>
+        <button data-category="Pearls / Moti" onclick="filterStorefront('Pearls / Moti')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Pearls / Moti</button>
+        <button data-category="Layer Malas" onclick="filterStorefront('Layer Malas')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Layer Malas</button>
+        <button data-category="Rashi Ratna" onclick="filterStorefront('Rashi Ratna')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Rashi Ratna</button>
+        <button data-category="Muga Mala" onclick="filterStorefront('Muga Mala')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Muga Mala</button>
+        <button data-category="Panchadhatu Rings" onclick="filterStorefront('Panchadhatu Rings')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Panchadhatu Rings</button>
+        <button data-category="Panchadhatu" onclick="filterStorefront('Panchadhatu')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Lockets & Bala</button>
+        <button data-category="Jade Chura" onclick="filterStorefront('Jade Chura')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Jade Chura</button>
+        <button data-category="Sale" onclick="filterStorefront('Sale')" class="category-btn px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50">Sale</button>
+      </div>
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+      <p class="text-[10px] text-zinc-500 mt-8 max-w-4xl">Product images shown online are reference images where an exact in-store product photograph was not uploaded. Please confirm exact stock, natural/synthetic material, bead size, finish and final Wholeale and Retail price before purchase.</p>
+    </section>
+
+    <section id="bracelets" class="py-20 px-6 md:px-12 bg-zinc-950/60 border-y border-zinc-900 reveal">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-center">
+          <div>
+            <h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-2">8 mm • 10 mm</h5>
+            <h2 class="font-luxury text-3xl md:text-4xl font-bold">Bracelet Collections</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mt-4">Explore 7 Chakra, Dhanyog and Rashi-inspired bead bracelets. The Rashi selector below changes the reference image and traditional association without changing the overall store layout.</p>
+            <div class="flex flex-wrap gap-2 mt-5"><span class="px-3 py-2 rounded-full border border-zinc-800 text-[10px] text-zinc-300">8 mm</span><span class="px-3 py-2 rounded-full border border-zinc-800 text-[10px] text-zinc-300">10 mm</span><span class="px-3 py-2 rounded-full border border-zinc-800 text-[10px] text-zinc-300">Wholeale and Retail</span></div>
+          </div>
+          <div class="glass p-4 rounded-2xl border border-zinc-800">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <img src="https://images.unsplash.com/photo-1611591475824-28784869c3a3?auto=format&fit=crop&w=700&q=80" alt="7 Chakra bracelet reference" class="w-full aspect-square object-cover rounded-xl">
+              <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=700&q=80" alt="Gemstone bracelet reference" class="w-full aspect-square object-cover rounded-xl">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Gemstone jewellery reference" class="w-full aspect-square object-cover rounded-xl">
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4"><button onclick="filterStorefront('Bracelets')" class="add-btn">View all bracelet products</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rashi" class="py-20 px-6 md:px-12 max-w-7xl mx-auto reveal">
+      <div class="text-center mb-10"><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Traditional Astrology Reference</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Rashi Bracelet Selector</h2><p class="text-xs text-zinc-400 max-w-2xl mx-auto mt-3">Select a Rashi to change the bracelet reference image, associated gemstone and traditional belief text.</p></div>
+      <div class="flex flex-wrap justify-center gap-2 mb-7" id="rashi-tabs"></div>
+      <div class="rashi-preview grid md:grid-cols-2 items-stretch">
+        <div class="overflow-hidden"><img id="rashi-preview-image" src="" alt="Rashi bracelet reference" class="w-full h-full min-h-[330px] object-cover"></div>
+        <div class="p-7 md:p-10 flex flex-col justify-center">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-gold">Selected Rashi</span>
+          <h3 id="rashi-preview-name" class="font-luxury text-2xl md:text-3xl font-bold mt-2"></h3>
+          <p class="text-xs text-zinc-500 mt-4 uppercase tracking-widest">Traditional stone association</p>
+          <p id="rashi-preview-stone" class="text-white mt-1"></p>
+          <p class="text-xs text-zinc-500 mt-5 uppercase tracking-widest">Traditional belief</p>
+          <p id="rashi-preview-belief" class="text-sm text-zinc-300 leading-relaxed mt-1"></p>
+          <div class="mt-6 p-4 rounded-xl border border-gold/20 bg-gold/5 text-[10px] text-zinc-400">Astrological gemstone associations are cultural/traditional beliefs and vary by practitioner. They are not medical or scientific guarantees.</div>
+          <button onclick="filterStorefront('Rashi Ratna')" class="add-btn self-start mt-6">Shop Rashi Ratna references</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pearls" class="py-20 px-6 md:px-12 bg-zinc-950/60 border-y border-zinc-900 reveal">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between gap-5 items-start md:items-end mb-10"><div><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Moti Collection</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Pearl Size Studio</h2></div><button onclick="filterStorefront('Pearls / Moti')" class="add-btn">View all pearl products</button></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 mb-8">${[3,4,5,6,7,8,9,10].map(mm=>`<div class="glass p-4 rounded-xl border border-zinc-800 text-center"><strong class="text-gold font-luxury text-xl">${mm} mm</strong><span class="block text-[9px] text-zinc-500 mt-1 uppercase">Coated Pearl</span></div>`).join('')}</div>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="glass-card rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80" alt="Pearl strand reference" class="w-full aspect-[4/3] object-cover"><div class="p-5"><h3 class="font-luxury">Coated Pearl</h3><p class="text-xs text-zinc-400 mt-2">3–10 mm display range.</p></div></div>
+          <div class="glass-card rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Japanese pearl reference" class="w-full aspect-[4/3] object-cover"><div class="p-5"><h3 class="font-luxury">Triple-Coated Japanese Pearl</h3><p class="text-xs text-zinc-400 mt-2">3–10 mm display range.</p></div></div>
+          <div class="glass-card rounded-xl overflow-hidden"><img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=900&q=80" alt="Freshwater pearl reference" class="w-full aspect-[4/3] object-cover"><div class="p-5"><h3 class="font-luxury">Freshwater Pearl</h3><p class="text-xs text-zinc-400 mt-2">Multiple strand and shape references.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto reveal">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Traditional Collections</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold mt-2">Mala, Muga & Panchadhatu</h2><p class="text-sm text-zinc-400 leading-relaxed mt-4">Browse layered mala sets, red coral / Muga references, Panchadhatu rings, lockets and bala. Panchadhatu is a traditional five-metal jewellery/craft concept; composition can vary by maker and region.</p><div class="flex flex-wrap gap-2 mt-6"><button onclick="filterStorefront('Layer Malas')" class="add-btn">Layer Malas</button><button onclick="filterStorefront('Muga Mala')" class="add-btn">Muga Mala</button><button onclick="filterStorefront('Panchadhatu Rings')" class="add-btn">Rings</button><button onclick="filterStorefront('Panchadhatu')" class="add-btn">Lockets & Bala</button></div></div>
+        <div class="grid grid-cols-2 gap-4"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80" alt="Gemstone mala reference" class="w-full aspect-square object-cover rounded-2xl border border-zinc-800"><img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=900&q=80" alt="Traditional jewellery reference" class="w-full aspect-square object-cover rounded-2xl border border-zinc-800"></div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 bg-zinc-950/60 border-y border-zinc-900 reveal">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10"><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Special Sizes</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Jade Chura</h2><p class="text-xs text-zinc-400 mt-3">Natural and synthetic references in the requested 2-2 through 2-10 size sequence.</p></div>
+        <div class="grid md:grid-cols-2 gap-6"><div class="glass p-6 rounded-2xl border border-zinc-800"><div class="flex justify-between items-center mb-5"><h3 class="font-luxury text-xl">Natural Jade</h3><span class="text-[10px] text-gold uppercase tracking-widest">5 sizes</span></div><div class="grid grid-cols-5 gap-2">${['2-2','2-4','2-6','2-8','2-10'].map(s=>`<div class="text-center p-3 rounded-lg border border-zinc-800"><span class="text-gold text-xs font-semibold">${s}</span><span class="block text-[9px] text-zinc-500 mt-1">Natural</span></div>`).join('')}</div></div><div class="glass p-6 rounded-2xl border border-zinc-800"><div class="flex justify-between items-center mb-5"><h3 class="font-luxury text-xl">Synthetic Jade</h3><span class="text-[10px] text-gold uppercase tracking-widest">5 sizes</span></div><div class="grid grid-cols-5 gap-2">${['2-2','2-4','2-6','2-8','2-10'].map(s=>`<div class="text-center p-3 rounded-lg border border-zinc-800"><span class="text-gold text-xs font-semibold">${s}</span><span class="block text-[9px] text-zinc-500 mt-1">Synthetic</span></div>`).join('')}</div></div></div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto reveal">
+      <div class="flex flex-col md:flex-row justify-between gap-5 items-end mb-8"><div><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Limited Display Offer</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Sale Corner</h2><p class="text-xs text-zinc-400 mt-2">Requested display pricing: <span class="text-zinc-300 line-through">NPR 150</span> → <span class="text-gold font-semibold">NPR 100</span>.</p></div><button onclick="filterStorefront('Sale')" class="add-btn">View all sale items</button></div>
+      <div id="sale-preview" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+      <script>
+        // Small static preview is intentionally rendered from the same data after app.js loads.
+        window.addEventListener('load',()=>{const el=document.getElementById('sale-preview');if(window.products){el.innerHTML=window.products.filter(p=>p.category==='Sale').slice(0,4).map(p=>`<button onclick="openProductModal(${p.id})" class="glass-card rounded-xl overflow-hidden text-left"><img src="${p.image}" alt="${p.name}" class="w-full aspect-square object-cover"><div class="p-3"><div class="text-[10px] text-white font-semibold">${p.name}</div><div class="text-[10px] mt-1"><span class="text-gold">NPR 100</span> <span class="line-through text-zinc-600">NPR 150</span></div></div></button>`).join('')}});
+      </script>
+    </section>
+
+    <!-- ==========================================================
+         HERITAGE / SHOP MEDIA: uploaded local assets only.
+         ========================================================== -->
+    <hr class="hairline max-w-5xl mx-auto">
+    <section id="heritage" class="py-20 px-6 md:px-12 bg-zinc-950/60 border-y border-zinc-900 z-10 relative reveal">
+      <div class="max-w-6xl mx-auto space-y-12">
+        <div class="text-center space-y-3"><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Our Journey & Trust</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold text-white">From Original Shop to Current Showroom</h2><p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">Your uploaded old-shop photograph and new-shop video are kept as the primary heritage/current-store visuals. The other uploaded videos are separated into the Quick Tour below.</p></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="glass p-4 rounded-lg border border-zinc-800 text-center space-y-4"><div class="relative aspect-video rounded-md overflow-hidden bg-zinc-900 border border-zinc-800 group"><img src="photos/old-shop-photo.jpeg" alt="Old Global Suppliers shop photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><span class="absolute top-3 left-3 bg-black/80 text-gold text-[10px] font-bold px-3 py-1 rounded border border-gold/30">OLD SHOP</span></div><div><h3 class="font-luxury text-lg text-white">Original Establishment</h3><p class="text-xs text-zinc-400">Uploaded old shop photograph, retained as the legacy visual.</p></div></div>
+          <div class="glass p-4 rounded-lg border border-gold/30 text-center space-y-4"><div class="relative aspect-video rounded-md overflow-hidden bg-zinc-900 border border-zinc-800"><video controls playsinline preload="metadata" class="w-full h-full object-cover"><source src="videos/new-shop-tour.mp4" type="video/mp4">Your browser does not support video playback.</video><span class="absolute top-3 left-3 bg-gold text-black text-[10px] font-bold px-3 py-1 rounded">CURRENT STOREFRONT VIDEO</span></div><div><h3 class="font-luxury text-lg text-white">New Shop Tour</h3><p class="text-xs text-zinc-400">Uploaded new shop video, kept as the primary current-store visual.</p></div></div>
+        </div>
+        <div class="pt-8 border-t border-zinc-800">
+          <div class="text-center mb-8"><h3 class="font-luxury text-2xl text-gold">Quick Tour & Collection Previews</h3><p class="text-xs text-zinc-400 mt-1">All remaining uploaded videos are preserved here as separate tour clips.</p></div>
+          <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+            ${[
+              ['videos/quick-tour-01.mp4','Crystal & Gem Malas'],['videos/quick-tour-02.mp4','Beaded Mala Display'],['videos/quick-tour-03.mp4','Freshwater Pearl Strings'],['videos/quick-tour-04.mp4','Layered Pearl Necklaces'],['videos/quick-tour-05.mp4','Additional Store Detail']
+            ].map(([src,title],i)=>`<div class="video-card glass p-2 rounded-lg border border-zinc-800"><video controls playsinline preload="metadata" class="w-full aspect-[9/16] object-cover rounded"><source src="${src}" type="video/mp4"></video><p class="text-[11px] text-zinc-300 text-center mt-2 font-semibold">${title}</p></div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hairline max-w-5xl mx-auto">
+    <section id="manager" class="py-20 px-6 md:px-12 max-w-5xl mx-auto z-10 relative reveal">
+      <div class="text-center mb-10"><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-2">Store Leadership</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Management & Operations</h2></div>
+      <div class="glass p-8 rounded-xl border border-gold/30 flex flex-col md:flex-row items-center gap-8">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-gold/50 flex-shrink-0 bg-zinc-900 flex items-center justify-center"><img src="photos/logo-global-suppliers.jpeg" alt="Global Suppliers logo" class="w-full h-full object-contain p-3"></div>
+        <div class="text-center md:text-left space-y-3"><span class="text-xs text-gold uppercase tracking-widest font-semibold px-3 py-1 rounded bg-gold/10 border border-gold/20">Manager</span><h3 class="font-luxury text-2xl font-bold text-white">Ayush Neupane</h3><p class="text-xs text-zinc-400 leading-relaxed max-w-xl">Manager — Global Suppliers. Oversees customer enquiries, Wholeale and Retail coordination, product presentation and day-to-day store operations.</p><div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs font-mono text-gold"><span><i class="fa-solid fa-location-dot mr-1"></i> Pokhara</span><span><i class="fa-solid fa-gem mr-1"></i> Gemstones & Jewellery</span><span><i class="fa-solid fa-handshake mr-1"></i> Wholeale and Retail Enquiries</span></div></div>
+      </div>
+    </section>
+
+    <section id="business-card" class="py-20 px-6 md:px-12 max-w-5xl mx-auto z-10 relative reveal">
+      <div class="text-center mb-10"><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold mb-2">Official Credentials</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Business Card & Direct Contact</h2></div>
+      <div class="glass p-6 md:p-8 rounded-xl border border-gold/40 shadow-2xl relative overflow-hidden bg-gradient-to-br from-emeraldBg via-zinc-950 to-darkBg">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b border-zinc-800">
+          <div class="text-center md:text-left"><span class="text-xs text-gold uppercase tracking-widest font-semibold">Proprietor</span><h3 class="font-luxury text-xl md:text-2xl font-bold text-white">Pro. Ganga Pd. Neupane</h3><p class="text-xs text-zinc-400">Global Suppliers (ग्लोबल सप्लायर्स)</p><p class="text-[11px] text-gold/80 mt-1">Manager: Ayush Neupane</p></div>
+          <div class="flex flex-col items-center md:items-end space-y-1 text-xs font-mono text-gold"><a href="tel:9856033167" class="hover:underline flex items-center gap-2"><i class="fa-solid fa-phone"></i>9856033167</a><a href="tel:9867359638" class="hover:underline flex items-center gap-2"><i class="fa-solid fa-mobile-screen"></i>9867359638</a></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-center md:text-left text-xs text-zinc-300">
+          <div><h4 class="text-gold font-semibold uppercase mb-1"><i class="fa-solid fa-location-dot mr-1"></i>Store Location</h4><p>Pokhara-1, Mohoriya Tole &<br>Pokhara-4, Chipledhunga, Nepal</p></div>
+          <div><h4 class="text-gold font-semibold uppercase mb-1"><i class="fa-solid fa-gem mr-1"></i>Specialization</h4><p>राशी रत्न, मुगा माला, मोती माला, जेट माला Wholeale and Retail</p></div>
+          <div><h4 class="text-gold font-semibold uppercase mb-1"><i class="fa-solid fa-clock-rotate-left mr-1"></i>Trust Experience</h4><p>Established 2062 BS</p></div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-zinc-800 text-center"><p class="text-[11px] text-zinc-400 mb-4">Uploaded business card / shop information image</p><div class="inline-block p-2 bg-zinc-900 rounded-lg border border-gold/30"><img src="photos/business-card.jpg" alt="Global Suppliers uploaded business card" class="max-w-full h-auto rounded-md max-h-[520px] mx-auto"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-12 px-6 md:px-12 border-t border-zinc-900 text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+    <div class="flex items-center gap-3"><img src="photos/logo-global-suppliers.jpeg" alt="Global Suppliers logo" class="h-8 w-auto object-contain rounded-sm"><p>&copy; 2026 Global Suppliers (Est. 2062 BS). Pokhara, Nepal.</p></div>
+    <div class="flex space-x-6 text-base"><a href="https://www.tiktok.com/@globalgemsandjewellery" target="_blank" rel="noopener noreferrer" class="hover:text-gold" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="https://www.instagram.com/global__suppliers" target="_blank" rel="noopener noreferrer" class="hover:text-gold" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/9779819169972" target="_blank" rel="noopener noreferrer" class="hover:text-gold" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
+  </footer>
+
+  <div class="live-chat" aria-label="Live chat options">
+    <div class="live-chat-options" aria-label="Choose a messaging service">
+      <a href="https://wa.me/9779819169972" target="_blank" rel="noopener noreferrer" class="live-chat-option whatsapp-chat">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>
+      </a>
+      <a href="https://ig.me/m/global__suppliers" target="_blank" rel="noopener noreferrer" class="live-chat-option instagram-chat">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram DM</span>
+      </a>
+    </div>
+    <button type="button" class="live-chat-toggle" aria-label="Open live chat options" aria-expanded="false">
+      <i class="fa-solid fa-comments" aria-hidden="true"></i><span>Live chat</span>
+    </button>
+  </div>
+
+  <!-- Product Quick View Modal -->
+  <div id="product-modal" class="hidden fixed inset-0 z-[70] bg-black/80 backdrop-blur-sm p-4 md:p-8 flex items-center justify-center">
+    <div class="modal-panel glass max-w-4xl w-full rounded-2xl border border-gold/25 overflow-hidden max-h-[92vh] overflow-y-auto">
+      <div class="flex justify-between items-center px-5 py-4 border-b border-zinc-800"><span class="text-[10px] uppercase tracking-widest text-gold">Product Quick View</span><button data-close-modal class="text-zinc-400 hover:text-gold text-xl" aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="grid md:grid-cols-2"><div><img data-modal-image src="" alt="" class="w-full h-full min-h-[300px] object-cover"></div><div class="p-7 md:p-9 flex flex-col justify-center"><span data-modal-category class="text-[10px] uppercase tracking-widest text-gold"></span><h3 data-modal-title class="font-luxury text-2xl md:text-3xl font-bold mt-2"></h3><p data-modal-description class="text-sm text-zinc-400 leading-relaxed mt-4"></p><div class="mt-6 flex items-center gap-3"><span data-modal-price class="text-gold font-mono font-bold text-xl"></span><span data-modal-old class="text-zinc-500 line-through text-xs"></span></div><div class="mt-6 p-4 rounded-xl border border-zinc-800 text-[10px] text-zinc-400">Reference images and display prices are for browsing. Confirm exact material, size, availability and final Wholeale and Retail quote with Global Suppliers.</div><button data-modal-add class="add-btn mt-6 self-start px-5 py-3">Add to bag</button></div></div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Drawer -->
+  <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md glass z-[80] translate-x-full hidden flex flex-col p-6 shadow-2xl transition-transform duration-300 border-l border-gold/20">
+    <div class="flex justify-between items-center mb-6 pb-4 border-b border-zinc-800"><h3 class="font-luxury text-base tracking-widest text-white uppercase">Your Shopping Bag</h3><button onclick="toggleCartModal(false)" class="text-gray-400 hover:text-gold text-xl" aria-label="Close bag"><i class="fa-solid fa-xmark"></i></button></div>
+    <div id="cart-items" class="flex-grow overflow-y-auto space-y-4 dynamic-scroller"></div>
+    <div class="pt-4 border-t border-zinc-800 space-y-4"><div class="flex justify-between items-center text-sm font-semibold text-white"><span>Subtotal:</span><span id="cart-total" class="text-gold text-base">NPR 0</span></div><button onclick="dispatchCartCheckout()" class="w-full py-3 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-gold-dark transition-all"><i class="fa-brands fa-whatsapp mr-2"></i>Send Order via WhatsApp</button></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Expose inventory only for the small Sale preview above; all main logic stays in app.js.
+    window.addEventListener('DOMContentLoaded',()=>{ window.products = products; });
+    const liveChat = document.querySelector('.live-chat');
+    const liveChatToggle = document.querySelector('.live-chat-toggle');
+    liveChatToggle?.addEventListener('click',()=>{
+      const isOpen = liveChat.classList.toggle('is-open');
+      liveChatToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+</body>
+</html>
