@@ -324,3 +324,440 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',closeProductModal));
     document.getElementById('product-modal')?.addEventListener('click',e=>{if(e.target.id==='product-modal')closeProductModal()});
 });
+
+/* =================================================
+   NEPALI VEDIC RASHI FINDER
+   Name-based traditional Naam Akshar lookup
+================================================= */
+
+// Traditional name-starting syllable lookup.
+// Confirm the preferred chart against your chosen
+// Nepali Panchang before using for formal prescriptions.
+
+const VEDIC_RASHI_DATA = [
+  {
+    name: "मेष राशि",
+    english: "Aries",
+    planet: "Mars (Mangal)",
+    syllables: ["Chu", "Che", "Cho", "La", "Li", "Lu", "Le", "Lo", "A"],
+    gems: ["Red Coral", "Carnelian"],
+    crystals: ["Garnet", "Clear Quartz", "Red Jasper"],
+    bracelet: "Red Coral, Carnelian or Red Jasper beads. Available bead sizes can include 8 mm and 10 mm.",
+    mala: "Red Coral or Carnelian mala and pendant options.",
+    instructions: "Traditional association: Tuesday. Exact wearing hand, finger and weight require individual verification."
+  },
+  {
+    name: "वृषभ राशि",
+    english: "Taurus",
+    planet: "Venus (Shukra)",
+    syllables: ["I", "U", "E", "O", "Va", "Vi", "Vu", "Ve", "Vo"],
+    gems: ["Diamond", "White Sapphire"],
+    crystals: ["Rose Quartz", "Green Aventurine", "Clear Quartz"],
+    bracelet: "Rose Quartz, Green Aventurine or other suitable crystal beads.",
+    mala: "Rose Quartz or White Sapphire pendant options.",
+    instructions: "Traditional association: Friday. Personal gemstone suitability should be checked."
+  },
+  {
+    name: "मिथुन राशि",
+    english: "Gemini",
+    planet: "Mercury (Budh)",
+    syllables: ["Ka", "Ki", "Ku", "Gha", "Ng", "Chha", "Ke", "Ko", "Ha"],
+    gems: ["Emerald", "Peridot"],
+    crystals: ["Green Aventurine", "Fluorite", "Citrine"],
+    bracelet: "Green Aventurine, Fluorite or Peridot bead combinations.",
+    mala: "Emerald or Green Aventurine pendant options.",
+    instructions: "Traditional association: Wednesday. Confirm suitability before prescribing a planetary gemstone."
+  },
+  {
+    name: "कर्कट राशि",
+    english: "Cancer",
+    planet: "Moon (Chandra)",
+    syllables: ["Hi", "Hu", "He", "Ho", "Da", "Di", "Du", "De", "Do"],
+    gems: ["Pearl", "Moonstone"],
+    crystals: ["Selenite", "Clear Quartz", "White Agate"],
+    bracelet: "Pearl, Moonstone or White Agate beads.",
+    mala: "Pearl mala and Moonstone pendant options.",
+    instructions: "Traditional association: Monday. Natural pearl and imitation pearl must be distinguished."
+  },
+  {
+    name: "सिंह राशि",
+    english: "Leo",
+    planet: "Sun (Surya)",
+    syllables: ["Ma", "Mi", "Mu", "Me", "Mo", "Ta", "Ti", "Tu", "Te"],
+    gems: ["Ruby", "Red Spinel"],
+    crystals: ["Sunstone", "Carnelian", "Tiger's Eye"],
+    bracelet: "Sunstone, Carnelian or Tiger's Eye bead combinations.",
+    mala: "Ruby or Sunstone pendant options.",
+    instructions: "Traditional association: Sunday. Ruby weight and suitability require individual assessment."
+  },
+  {
+    name: "कन्या राशि",
+    english: "Virgo",
+    planet: "Mercury (Budh)",
+    syllables: ["To", "Pa", "Pi", "Pu", "Sha", "Na", "Tha", "Pe", "Po"],
+    gems: ["Emerald", "Peridot"],
+    crystals: ["Fluorite", "Amazonite", "Green Aventurine"],
+    bracelet: "Amazonite, Fluorite or Green Aventurine beads.",
+    mala: "Emerald or Amazonite pendant options.",
+    instructions: "Traditional association: Wednesday. Confirm the exact name syllable using your selected chart."
+  },
+  {
+    name: "तुला राशि",
+    english: "Libra",
+    planet: "Venus (Shukra)",
+    syllables: ["Ra", "Ri", "Ru", "Re", "Ro", "Ta", "Ti", "Tu", "Te"],
+    gems: ["Diamond", "White Sapphire"],
+    crystals: ["Rose Quartz", "Lapis Lazuli", "Amethyst"],
+    bracelet: "Rose Quartz, Amethyst or Lapis Lazuli beads.",
+    mala: "Rose Quartz mala or suitable pendant options.",
+    instructions: "Traditional association: Friday. Gemstone recommendations are not universal."
+  },
+  {
+    name: "वृश्चिक राशि",
+    english: "Scorpio",
+    planet: "Mars (Mangal)",
+    syllables: ["To", "Na", "Ni", "Nu", "Ne", "No", "Ya", "Yi", "Yu"],
+    gems: ["Red Coral", "Garnet"],
+    crystals: ["Obsidian", "Red Jasper", "Carnelian"],
+    bracelet: "Red Jasper, Obsidian or Carnelian beads.",
+    mala: "Red Coral or Garnet pendant options.",
+    instructions: "Traditional association: Tuesday. Verify the appropriate stone individually."
+  },
+  {
+    name: "धनु राशि",
+    english: "Sagittarius",
+    planet: "Jupiter (Guru)",
+    syllables: ["Ye", "Yo", "Bha", "Bhi", "Bhu", "Dha", "Pha", "Dha", "Bhe"],
+    gems: ["Yellow Sapphire", "Citrine"],
+    crystals: ["Amethyst", "Tiger's Eye", "Lapis Lazuli"],
+    bracelet: "Citrine, Amethyst or Tiger's Eye beads.",
+    mala: "Yellow Sapphire or Citrine pendant options.",
+    instructions: "Traditional association: Thursday. Yellow Sapphire should not be prescribed by sign alone."
+  },
+  {
+    name: "मकर राशि",
+    english: "Capricorn",
+    planet: "Saturn (Shani)",
+    syllables: ["Bho", "Ja", "Ji", "Khi", "Khu", "Khe", "Kho", "Ga", "Gi"],
+    gems: ["Blue Sapphire", "Amethyst"],
+    crystals: ["Black Tourmaline", "Onyx", "Smoky Quartz"],
+    bracelet: "Black Tourmaline, Onyx or Smoky Quartz beads.",
+    mala: "Amethyst or suitable traditional gemstone pendant options.",
+    instructions: "Traditional association: Saturday. Blue Sapphire requires particular caution and expert assessment."
+  },
+  {
+    name: "कुम्भ राशि",
+    english: "Aquarius",
+    planet: "Saturn (Shani)",
+    syllables: ["Gu", "Ge", "Go", "Sa", "Si", "Su", "Se", "So", "Da"],
+    gems: ["Blue Sapphire", "Amethyst"],
+    crystals: ["Aquamarine", "Labradorite", "Black Tourmaline"],
+    bracelet: "Aquamarine, Labradorite or Black Tourmaline beads.",
+    mala: "Amethyst or Aquamarine pendant options.",
+    instructions: "Traditional association: Saturday. Individual suitability should be checked."
+  },
+  {
+    name: "मीन राशि",
+    english: "Pisces",
+    planet: "Jupiter (Guru)",
+    syllables: ["Di", "Du", "Tha", "Jha", "De", "Do", "Cha", "Chi"],
+    gems: ["Yellow Sapphire", "Citrine"],
+    crystals: ["Amethyst", "Aquamarine", "Moonstone"],
+    bracelet: "Amethyst, Aquamarine or Moonstone beads.",
+    mala: "Citrine or suitable traditional gemstone pendant options.",
+    instructions: "Traditional association: Thursday. Verify the exact gemstone before prescribing."
+  }
+];
+
+
+/* ================================================
+   COMMON TRADITIONAL NAVAGRAHA STONE GUIDE
+
+   These are general traditional conventions.
+   Weight is deliberately not fixed by Rashi.
+================================================ */
+
+const VEDIC_STONE_GUIDE = {
+  "Ruby": {
+    day: "Sunday",
+    hand: "Traditionally right",
+    finger: "Ring finger",
+    metal: "Gold",
+    weight: "Individual assessment"
+  },
+  "Pearl": {
+    day: "Monday",
+    hand: "Traditionally right",
+    finger: "Little finger",
+    metal: "Silver",
+    weight: "Individual assessment"
+  },
+  "Red Coral": {
+    day: "Tuesday",
+    hand: "Traditionally right",
+    finger: "Ring finger",
+    metal: "Gold or copper",
+    weight: "Individual assessment"
+  },
+  "Emerald": {
+    day: "Wednesday",
+    hand: "Traditionally right",
+    finger: "Little finger",
+    metal: "Gold",
+    weight: "Individual assessment"
+  },
+  "Yellow Sapphire": {
+    day: "Thursday",
+    hand: "Traditionally right",
+    finger: "Index finger",
+    metal: "Gold",
+    weight: "Individual assessment"
+  },
+  "Diamond": {
+    day: "Friday",
+    hand: "Traditionally right",
+    finger: "Ring finger",
+    metal: "Gold or platinum",
+    weight: "Individual assessment"
+  },
+  "Blue Sapphire": {
+    day: "Saturday",
+    hand: "Traditionally right",
+    finger: "Middle finger",
+    metal: "Silver or suitable alloy",
+    weight: "Individual assessment"
+  },
+  "Amethyst": {
+    day: "Saturday (some traditions)",
+    hand: "Either wrist for jewellery",
+    finger: "No universal prescription",
+    metal: "Any suitable jewellery metal",
+    weight: "No fixed astrological weight"
+  },
+  "Citrine": {
+    day: "Thursday (some traditions)",
+    hand: "Either wrist for jewellery",
+    finger: "No universal prescription",
+    metal: "Any suitable jewellery metal",
+    weight: "No fixed astrological weight"
+  },
+  "Moonstone": {
+    day: "Monday (some traditions)",
+    hand: "Either wrist for jewellery",
+    finger: "No universal prescription",
+    metal: "Silver commonly used",
+    weight: "No fixed astrological weight"
+  },
+  "Garnet": {
+    day: "Varies by tradition",
+    hand: "Either wrist for jewellery",
+    finger: "No universal prescription",
+    metal: "Any suitable jewellery metal",
+    weight: "No fixed astrological weight"
+  }
+};
+
+
+/* ================================================
+   NORMALIZE NAME FOR MATCHING
+================================================ */
+
+function normalizeVedicName(value) {
+  return value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+
+/* ================================================
+   FIND RASHI FROM NAME
+================================================ */
+
+function findVedicRashiByName(name) {
+  const cleanName = normalizeVedicName(name);
+
+  if (!cleanName) return null;
+
+  // Match the longest starting syllable first.
+  const matches = VEDIC_RASHI_DATA.flatMap(rashi =>
+    rashi.syllables.map(syllable => ({
+      rashi,
+      syllable: normalizeVedicName(syllable)
+    }))
+  ).sort((a, b) => b.syllable.length - a.syllable.length);
+
+  return matches.find(item =>
+    cleanName.startsWith(item.syllable)
+  )?.rashi || null;
+}
+
+
+/* ================================================
+   GEMSTONE IMAGE CARD
+================================================ */
+
+function createVedicStoneCard(stone, description) {
+  const card = document.createElement("article");
+  card.className = "vedic-stone-card";
+
+  const image = document.createElement("img");
+  image.src =
+    "https://placehold.co/500x350/17130e/d6ad62?text=" +
+    encodeURIComponent(stone);
+  image.alt = stone;
+  image.loading = "lazy";
+
+  const content = document.createElement("div");
+
+  const heading = document.createElement("h4");
+  heading.textContent = stone;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = description;
+
+  content.append(heading, paragraph);
+  card.append(image, content);
+
+  return card;
+}
+
+
+/* ================================================
+   DISPLAY GEMSTONE WEARING GUIDE
+================================================ */
+
+function renderVedicWearingGuide(stones) {
+  const tbody = document.getElementById("vedic-wearing-guide");
+  tbody.replaceChildren();
+
+  stones.forEach(stone => {
+    const guide = VEDIC_STONE_GUIDE[stone];
+
+    if (!guide) return;
+
+    const row = document.createElement("tr");
+
+    [
+      stone,
+      guide.day,
+      guide.hand,
+      guide.finger,
+      guide.metal,
+      guide.weight
+    ].forEach(value => {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.appendChild(cell);
+    });
+
+    tbody.appendChild(row);
+  });
+}
+
+
+/* ================================================
+   DISPLAY COMPLETE RASHI RESULT
+================================================ */
+
+function displayVedicRashi(rashi) {
+  document.getElementById("vedic-result").hidden = false;
+
+  document.getElementById("vedic-rashi-name").textContent =
+    rashi.name;
+
+  document.getElementById("vedic-rashi-english").textContent =
+    rashi.english;
+
+  document.getElementById("vedic-rashi-planet").textContent =
+    "Ruling Planet: " + rashi.planet;
+
+  document.getElementById("vedic-rashi-syllables").textContent =
+    "Traditional starting sounds: " + rashi.syllables.join(", ");
+
+  const gemsContainer = document.getElementById("vedic-gemstones");
+  const crystalsContainer = document.getElementById("vedic-crystals");
+
+  gemsContainer.replaceChildren();
+  crystalsContainer.replaceChildren();
+
+  rashi.gems.forEach(stone => {
+    gemsContainer.appendChild(
+      createVedicStoneCard(
+        stone,
+        "Traditional gemstone association. Check suitability and authenticity before purchase."
+      )
+    );
+  });
+
+  rashi.crystals.forEach(stone => {
+    crystalsContainer.appendChild(
+      createVedicStoneCard(
+        stone,
+        "Alternative crystal and jewellery option. Not necessarily a prescribed planetary gemstone."
+      )
+    );
+  });
+
+  renderVedicWearingGuide(rashi.gems);
+
+  document.getElementById("vedic-bracelet-guide").textContent =
+    rashi.bracelet;
+
+  document.getElementById("vedic-mala-guide").textContent =
+    rashi.mala;
+
+  document.getElementById("vedic-instructions").textContent =
+    rashi.instructions +
+    " Traditional purification and mantra practices vary by tradition.";
+}
+
+
+/* ================================================
+   FIND RASHI BUTTON
+================================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("vedic-find-btn");
+
+  if (!button) return;
+
+  button.addEventListener("click", function () {
+    const name = document.getElementById("vedic-name").value;
+    const dob = document.getElementById("vedic-dob").value;
+    const birthTime = document.getElementById("vedic-time").value;
+    const birthPlace = document.getElementById("vedic-place").value;
+
+    const error = document.getElementById("vedic-error");
+    const result = document.getElementById("vedic-result");
+
+    error.textContent = "";
+    result.hidden = true;
+
+    if (!name.trim() && !dob) {
+      error.textContent =
+        "Please enter your name or date of birth.";
+      return;
+    }
+
+    if (name.trim()) {
+      const rashi = findVedicRashiByName(name);
+
+      if (rashi) {
+        displayVedicRashi(rashi);
+
+        if (dob && (!birthTime || !birthPlace.trim())) {
+          error.textContent =
+            "Name-based result shown. For accurate Vedic Moon Rashi, also provide birth time and birthplace.";
+        }
+      } else {
+        error.textContent =
+          "We could not match the name's starting sound. Try entering the first spoken syllable or use your birth details.";
+      }
+    } else if (dob) {
+      error.textContent =
+        "Date of birth received. Accurate Janma Rashi (Moon sign) requires birth date, exact birth time and birthplace. This website needs a verified Vedic astrology calculation service to calculate it accurately.";
+    }
+  });
+});
