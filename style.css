@@ -108,3 +108,233 @@ body.modal-open{overflow:hidden}
 .live-chat{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:10px}.live-chat-options{display:flex;flex-direction:column;align-items:flex-end;gap:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}.live-chat.is-open .live-chat-options{opacity:1;visibility:visible;transform:none}.live-chat-option{display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:8px;color:#fff;font-size:11px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.35);transition:transform .2s,filter .2s}.live-chat-option:hover{transform:translateX(-3px);filter:brightness(1.1)}.live-chat-option i{font-size:16px}.whatsapp-chat{background:#168c4b}.instagram-chat{background:linear-gradient(120deg,#7b2cbf,#d62976 55%,#f77f00)}.live-chat-toggle{display:flex;align-items:center;gap:9px;padding:13px 16px;border:1px solid var(--gold);border-radius:999px;background:var(--gold);color:#090A0C;font-size:11px;font-weight:800;box-shadow:0 10px 28px rgba(0,0,0,.4);cursor:pointer;transition:transform .2s,background .2s}.live-chat-toggle:hover{background:var(--gold-light);transform:translateY(-2px)}.live-chat-toggle i{font-size:16px}.live-chat.is-open .live-chat-toggle i{transform:rotate(8deg)}
 @media(max-width:767px){.glow-orb{width:280px;height:280px}.hero-grid{background-size:32px 32px}.product-card:hover{transform:translateY(-3px)}}
 @media(max-width:480px){.live-chat{right:14px;bottom:14px}.live-chat-toggle{padding:12px 14px}.live-chat-option{padding:9px 11px}}
+
+/* ==========================================
+   VEDIC RASHI FINDER
+========================================== */
+
+.vedic-rashi-section {
+  padding: 65px 5%;
+  color: #fff;
+  background: #11100e;
+}
+
+.vedic-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
+.vedic-subtitle {
+  color: #d6ad62;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.vedic-heading h2 {
+  font-size: clamp(27px, 4vw, 42px);
+  margin: 14px 0;
+}
+
+.vedic-heading p {
+  color: #bcb6aa;
+  line-height: 1.7;
+}
+
+.vedic-finder {
+  max-width: 650px;
+  margin: auto;
+  padding: 28px;
+  border: 1px solid #8f7040;
+  border-radius: 15px;
+  background: #1a1815;
+  display: grid;
+  gap: 18px;
+}
+
+.vedic-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vedic-input-group label {
+  color: #e5c17d;
+  font-weight: 600;
+}
+
+.vedic-input-group input {
+  padding: 13px;
+  border: 1px solid #514633;
+  border-radius: 8px;
+  background: #100f0d;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vedic-input-group small {
+  color: #aaa;
+  font-size: 12px;
+}
+
+#vedic-find-btn {
+  padding: 15px;
+  background: linear-gradient(120deg, #b78b45, #e3c17e);
+  color: #17120b;
+  font-weight: 800;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#vedic-find-btn:hover {
+  filter: brightness(1.12);
+}
+
+.vedic-error {
+  color: #ff9292;
+  margin: 0;
+}
+
+.vedic-result {
+  max-width: 1050px;
+  margin: 40px auto 0;
+}
+
+.vedic-result-heading {
+  text-align: center;
+  padding: 35px 15px;
+  border: 1px solid #8f7040;
+  border-radius: 14px;
+  background: #1a1815;
+}
+
+.vedic-result-heading > span {
+  color: #d6ad62;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.vedic-result-heading h2 {
+  color: #e8c47e;
+  font-size: 35px;
+  margin: 12px 0 5px;
+}
+
+.vedic-result-heading p {
+  color: #c5bcae;
+}
+
+.vedic-result-block {
+  margin-top: 28px;
+  padding: 25px;
+  border: 1px solid #514633;
+  border-radius: 13px;
+  background: #1a1815;
+}
+
+.vedic-result-block h3 {
+  color: #e3c17e;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.vedic-stone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.vedic-stone-card {
+  background: #11100e;
+  border: 1px solid #514633;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.vedic-stone-card img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+}
+
+.vedic-stone-card div {
+  padding: 14px;
+}
+
+.vedic-stone-card h4 {
+  color: #e3c17e;
+  margin: 0 0 8px;
+}
+
+.vedic-stone-card p {
+  font-size: 13px;
+  color: #bcb6aa;
+  line-height: 1.6;
+}
+
+.vedic-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.vedic-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.vedic-table th,
+.vedic-table td {
+  border-bottom: 1px solid #514633;
+  padding: 13px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.vedic-table th {
+  color: #e3c17e;
+}
+
+.vedic-table td {
+  color: #ddd;
+}
+
+.vedic-note {
+  color: #bcb6aa;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+.vedic-guide-card {
+  background: #11100e;
+  border: 1px solid #514633;
+  padding: 16px;
+  border-radius: 9px;
+  margin-bottom: 12px;
+  color: #ddd;
+  line-height: 1.7;
+}
+
+.vedic-guide-card strong {
+  color: #e3c17e;
+}
+
+@media(max-width: 600px) {
+  .vedic-rashi-section {
+    padding: 40px 15px;
+  }
+
+  .vedic-finder,
+  .vedic-result-block {
+    padding: 18px;
+  }
+
+  .vedic-result-heading h2 {
+    font-size: 28px;
+  }
+}
