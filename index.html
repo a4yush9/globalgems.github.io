@@ -165,23 +165,117 @@
       </div>
     </section>
 
-    <section id="rashi" class="py-20 px-6 md:px-12 max-w-7xl mx-auto reveal">
-      <div class="text-center mb-10"><h5 class="text-gold tracking-[0.3em] uppercase text-xs font-semibold">Traditional Astrology Reference</h5><h2 class="font-luxury text-3xl md:text-4xl font-bold">Rashi Bracelet Selector</h2><p class="text-xs text-zinc-400 max-w-2xl mx-auto mt-3">Select a Rashi to change the bracelet reference image, associated gemstone and traditional belief text.</p></div>
-      <div class="flex flex-wrap justify-center gap-2 mb-7" id="rashi-tabs"></div>
-      <div class="rashi-preview grid md:grid-cols-2 items-stretch">
-        <div class="overflow-hidden"><img id="rashi-preview-image" src="" alt="Rashi bracelet reference" class="w-full h-full min-h-[330px] object-cover"></div>
-        <div class="p-7 md:p-10 flex flex-col justify-center">
-          <span class="text-[10px] uppercase tracking-[0.25em] text-gold">Selected Rashi</span>
-          <h3 id="rashi-preview-name" class="font-luxury text-2xl md:text-3xl font-bold mt-2"></h3>
-          <p class="text-xs text-zinc-500 mt-4 uppercase tracking-widest">Traditional stone association</p>
-          <p id="rashi-preview-stone" class="text-white mt-1"></p>
-          <p class="text-xs text-zinc-500 mt-5 uppercase tracking-widest">Traditional belief</p>
-          <p id="rashi-preview-belief" class="text-sm text-zinc-300 leading-relaxed mt-1"></p>
-          <div class="mt-6 p-4 rounded-xl border border-gold/20 bg-gold/5 text-[10px] text-zinc-400">Astrological gemstone associations are cultural/traditional beliefs and vary by practitioner. They are not medical or scientific guarantees.</div>
-          <button onclick="filterStorefront('Rashi Ratna')" class="add-btn self-start mt-6">Shop Rashi Ratna references</button>
-        </div>
+   
+<!-- ==========================================
+     NEPALI VEDIC RASHI & GEMSTONE FINDER
+=========================================== -->
+
+<section class="vedic-rashi-section" id="vedic-rashi">
+  <div class="vedic-heading">
+    <span class="vedic-subtitle">VEDIC ASTROLOGY • GEMSTONE GUIDE</span>
+    <h2>Discover Your Rashi & Gemstones</h2>
+    <p>
+      Find your traditional Nepali Vedic Rashi and explore
+      associated gemstones, crystals and jewellery.
+    </p>
+  </div>
+
+  <div class="vedic-finder">
+    <div class="vedic-input-group">
+      <label for="vedic-name">Your Name</label>
+      <input
+        type="text"
+        id="vedic-name"
+        placeholder="Enter your name (e.g. Ayush)"
+      />
+      <small>Name-based Rashi uses the first spoken syllable.</small>
+    </div>
+
+    <div class="vedic-input-group">
+      <label for="vedic-dob">Date of Birth</label>
+      <input type="date" id="vedic-dob" />
+    </div>
+
+    <div class="vedic-input-group">
+      <label for="vedic-time">Birth Time (optional)</label>
+      <input type="time" id="vedic-time" />
+    </div>
+
+    <div class="vedic-input-group">
+      <label for="vedic-place">Birth Place (optional)</label>
+      <input
+        type="text"
+        id="vedic-place"
+        placeholder="e.g. Butwal, Nepal"
+      />
+    </div>
+
+    <button type="button" id="vedic-find-btn">
+      Find My Rashi
+    </button>
+
+    <p class="vedic-error" id="vedic-error"></p>
+  </div>
+
+  <div id="vedic-result" class="vedic-result" hidden>
+    <div class="vedic-result-heading">
+      <span>YOUR VEDIC RASHI</span>
+      <h2 id="vedic-rashi-name"></h2>
+      <p id="vedic-rashi-english"></p>
+      <p id="vedic-rashi-planet"></p>
+      <p id="vedic-rashi-syllables"></p>
+    </div>
+
+    <div class="vedic-result-block">
+      <h3>Associated Gemstones</h3>
+      <div class="vedic-stone-grid" id="vedic-gemstones"></div>
+    </div>
+
+    <div class="vedic-result-block">
+      <h3>Alternative Crystals</h3>
+      <div class="vedic-stone-grid" id="vedic-crystals"></div>
+    </div>
+
+    <div class="vedic-result-block">
+      <h3>Traditional Stone Wearing Guide</h3>
+      <div class="vedic-table-wrapper">
+        <table class="vedic-table">
+          <thead>
+            <tr>
+              <th>Stone</th>
+              <th>Day</th>
+              <th>Hand</th>
+              <th>Finger</th>
+              <th>Metal</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody id="vedic-wearing-guide"></tbody>
+        </table>
       </div>
-    </section>
+      <p class="vedic-note">
+        Wearing traditions vary. Exact gemstone selection and weight
+        should be verified with a qualified Vedic astrologer.
+      </p>
+    </div>
+
+    <div class="vedic-result-block">
+      <h3>Bracelet Wearing Guide</h3>
+      <div id="vedic-bracelet-guide"></div>
+    </div>
+
+    <div class="vedic-result-block">
+      <h3>Mala & Pendant Guide</h3>
+      <div id="vedic-mala-guide"></div>
+    </div>
+
+    <div class="vedic-result-block">
+      <h3>Traditional Wearing Instructions</h3>
+      <div id="vedic-instructions"></div>
+    </div>
+  </div>
+</section>
+
 
     <section id="pearls" class="py-20 px-6 md:px-12 bg-zinc-950/60 border-y border-zinc-900 reveal">
       <div class="max-w-7xl mx-auto">
